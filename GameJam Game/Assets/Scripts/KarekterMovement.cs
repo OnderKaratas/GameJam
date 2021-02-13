@@ -4,77 +4,19 @@ using UnityEngine;
 
 public class KarekterMovement : MonoBehaviour
 {
-    public Vector2 sağ,sol,jump;
-    bool sağcheck, solcheck, jumpcheck;
-    public Rigidbody2D rb2d;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject bullet;
+    public Transform ateşnoktası;
+    public float atışhızı;
+    private void Update()
     {
-        rb2d.GetComponent<Rigidbody2D>();
-        sağcheck = false;
-        solcheck = false;
-        jumpcheck = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetMouseButtonDown(0))
         {
-            sağcheck = true;
-    
-        }
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            sağcheck = false;
-
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            solcheck = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            sağcheck = false;
-
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            jumpcheck = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.W))
-        {
-            jumpcheck = false;
+            shoot();
         }
     }
-    private void ProcessSağ()
+    public void shoot()
     {
-        if (sağcheck)
-        {
-            rb2d.AddForce(sağ, ForceMode2D.Impulse);
-            
-        }
-    }
-    private void ProcessSol()
-    {
-        if (solcheck)
-        {
-            rb2d.AddForce(sol, ForceMode2D.Impulse);
-            
-        }
-    }
-    private void ProcessJump()
-    {
-        if (jumpcheck)
-        {
-            rb2d.AddForce(jump, ForceMode2D.Impulse);
-            
-        }
-    }
-    private void FixedUpdate()
-    {
-        ProcessSağ();
-        ProcessSol();
-        ProcessJump();
+        GameObject mermi = Instantiate(bullet, ateşnoktası.position, Quaternion.identity);
+        mermi.GetComponent<Rigidbody2D>().velocity=new Vector3(atışhızı*Time.deltaTime,0,0);
     }
 }
