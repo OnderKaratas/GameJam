@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 163146015}
   m_Layer: 0
   m_Name: "sa\u011F duvar"
-  m_TagString: Untagged
+  m_TagString: zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 329849839}
   m_Layer: 0
   m_Name: sol duvar
-  m_TagString: Untagged
+  m_TagString: zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +645,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &564125090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,8 +659,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1904648997}
+  moveSpeed: 10
   "ate\u015Fnoktas\u0131": {fileID: 1275677243}
-  "at\u0131\u015Fh\u0131z\u0131": 10
+  "at\u0131\u015Fh\u0131z\u0131": 5000
+  "Saya\xE7": 0.5
+  rb: {fileID: 564125089}
+  JumpForce: {x: 0, y: 500}
 --- !u!1 &571716922
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +760,7 @@ GameObject:
   - component: {fileID: 877819138}
   m_Layer: 0
   m_Name: zemin
-  m_TagString: Untagged
+  m_TagString: zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1154,6 +1158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1614165631}
+  - component: {fileID: 1614165632}
   m_Layer: 0
   m_Name: "d\xFC\u015Fman(manken)"
   m_TagString: Untagged
@@ -1179,6 +1184,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1614165632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614165630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c345d6494fa4aa5aa9bce1c2815604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &1617764477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617764477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1397967, y: 0.75621116, z: 22.886072}
+  m_LocalPosition: {x: -1.1397967, y: 0.75621116, z: 0}
   m_LocalScale: {x: 0.3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2086646742}
@@ -1286,7 +1304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642839589}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.5915818, y: 1.1096592, z: 22.886072}
+  m_LocalPosition: {x: -0.5915818, y: 1.1096592, z: 0}
   m_LocalScale: {x: 0.4, y: 1.3999999, z: 1}
   m_Children: []
   m_Father: {fileID: 2086646742}
@@ -1450,7 +1468,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &1904649001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1583,7 +1601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086646741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.16, y: -0.87965924, z: -22.886072}
+  m_LocalPosition: {x: -5.16, y: -0.87965924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1642839590}
@@ -1599,6 +1617,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4985036896130871750, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
+      propertyPath: "ate\u015Fnoktas\u0131"
+      value: 
+      objectReference: {fileID: 1275677243}
+    - target: {fileID: -4985036896130871750, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1904648997}
+    - target: {fileID: -4985036896130871750, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
+      propertyPath: "at\u0131\u015Fh\u0131z\u0131"
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -4985036896130871750, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6469195764382022325, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.12
@@ -1647,5 +1681,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4985036896130871750, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a85f3c1d1f9a8438cad3f630566ef6a3, type: 3}
